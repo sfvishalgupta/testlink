@@ -25,7 +25,11 @@ class ParkingoptionTableSeeder extends Seeder {
         DB::table('categories')->delete();
         $csvFile = public_path().'/category.csv';
         $areas = $this->csv_to_array($csvFile);
-        DB::table('categories')->insert($areas);        
-        
+        DB::table('categories')->insert($areas);
+
+        DB::table('paymentoptions')->delete();
+        $csvFile = public_path().'/paymentoptions.csv';
+        $areas = $this->csv_to_array($csvFile);
+        DB::table('paymentoptions')->insert($areas);        
     }
 }
